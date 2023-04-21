@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Notes</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="app_info">Designed by - Figma Community \nRedesigned by - MD Shourov Molla \nIllustrations - Provided by Figma \nIcons - Provided by Figma \nFont - Nunito</string>
+
+    <string-array name="bgColorList">
+        <item>#16a085</item>
+        <item>#0097e6</item>
+        <item>#D58437</item>
+        <item>#8e44ad</item>
+        <item>#57606f</item>
+        <item>#d35400</item>
+        <item>#6c5ce7</item>
+        <item>#40739e</item>
+        <item>#6D214F</item>
+        <item>#2C3A47</item>
+
+    </string-array>
+</resources>

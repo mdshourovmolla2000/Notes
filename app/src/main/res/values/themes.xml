@@ -1,0 +1,29 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.Notes" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+    </style>
+
+    <style name="AppThemeNoActionBar" parent="Theme.Material3.Light.NoActionBar">
+        <item name="android:navigationBarColor">@color/themeColor</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:statusBarColor">@color/themeColor</item>
+        <item name="android:windowBackground">@color/windowBackgroundColor</item>
+        <item name="android:scrollbarSize">4dp</item>
+        <item name="android:scrollbarThumbVertical">@color/themeColor</item>
+        <item name="android:fontFamily">@font/nunito_light</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="floatingActionButtonStyle">@style/FabStyle</item>
+    </style>
+
+    <style name="FabStyle" parent="Widget.Design.FloatingActionButton">
+        <item name="shapeAppearanceOverlay">@style/FabShapeStyle</item>
+    </style>
+
+    <style name="FabShapeStyle" parent="ShapeAppearance.MaterialComponents.SmallComponent">
+        <item name="cornerSize">50%</item>
+        <item name="cornerFamily">rounded</item>
+    </style>
+</resources>
