@@ -53,7 +53,7 @@ class SearchFragment : Fragment(), NoteItemClickListener {
 
         binding.closeButton.setOnClickListener { binding.searchEdittext.text.clear() }
 
-        binding.notesRecyclerview.apply { adapter = NoteListAdapter(requireContext(), noteList, this@SearchFragment) }
+        binding.notesRecyclerview.apply { adapter = NoteListAdapter(noteList, this@SearchFragment) }
 
         val swipeToDeleteCallback = object : SwipeToDeleteCallback(requireContext()) {
             override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
