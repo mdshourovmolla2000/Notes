@@ -151,28 +151,6 @@
             android:layout_gravity="center_vertical"
             android:layout_margin="@dimen/_27sdp"/>
 
-<!--        <com.google.android.material.button.MaterialButton-->
-<!--            android:id="@+id/addNoteIcon"-->
-<!--            android:layout_width="@dimen/_54sdp"-->
-<!--            android:layout_height="@dimen/_54sdp"-->
-<!--            app:layout_constraintEnd_toEndOf="parent"-->
-<!--            app:layout_constraintBottom_toBottomOf="parent"-->
-<!--            android:layout_margin="@dimen/_27sdp"-->
-<!--            android:insetBottom="0dp"-->
-<!--            android:insetLeft="0dp"-->
-<!--            android:insetRight="0dp"-->
-<!--            android:insetTop="0dp"-->
-<!--            android:padding="0dp"-->
-<!--            app:icon="@drawable/add_icon"-->
-<!--            app:iconGravity="textStart"-->
-<!--            app:iconPadding="0dp"-->
-<!--            app:iconSize="@dimen/_37sdp"-->
-<!--            app:iconTint="@color/white"-->
-<!--            app:cornerRadius="@dimen/_100sdp"-->
-<!--            android:backgroundTint="#252525"-->
-<!--            android:stateListAnimator="@null"-->
-<!--            android:elevation="@dimen/_5sdp"/>-->
-
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
