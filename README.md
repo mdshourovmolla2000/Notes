@@ -8,9 +8,13 @@
     ▪ Search Note
 &nbsp;
 ## 🖼️ **Screenshots**
-| `air` | `contrast` | `dark` |
+| ` Home ` | ` Add Note ` | ` Edit Note ` |
 | --- | --- | --- |
-| [![air skin](https://mmistakes.github.io/minimal-mistakes/assets/images/air-skin-archive.png)](https://mmistakes.github.io/minimal-mistakes/assets/images/air-skin-archive-large.png) | [![contrast skin](https://mmistakes.github.io/minimal-mistakes/assets/images/contrast-skin-archive.png)](https://mmistakes.github.io/minimal-mistakes/assets/images/contrast-skin-archive-large.png) | [![dark skin](https://mmistakes.github.io/minimal-mistakes/assets/images/dark-skin-archive.png)](https://mmistakes.github.io/minimal-mistakes/assets/images/dark-skin-archive-large.png) |
+| ![Home](https://user-images.githubusercontent.com/68102562/235592801-5cf66c79-cc0f-4ac0-bab4-d1c3e96c1fa0.jpg) | ![Add Note](https://user-images.githubusercontent.com/68102562/235592823-edb440d4-4a53-4902-bb8f-8b536c1be63d.jpg) | ![Edit Note](https://user-images.githubusercontent.com/68102562/235592819-2d89c31e-4838-4c7b-8716-db1dda184d8d.jpg) |
+
+| ` Swipe To Delete ` | ` Search ` |
+| --- | --- |
+| ![Delete](https://user-images.githubusercontent.com/68102562/235592812-5680a8bf-c802-41f0-8b63-e91771fae9a1.jpg) | ![Search](https://user-images.githubusercontent.com/68102562/235592817-743011ef-7307-448c-b404-838e90538dc1.jpg) |
 
 &nbsp;
 ## 👨‍💻 **Credits**
