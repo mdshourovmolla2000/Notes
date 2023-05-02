@@ -52,7 +52,7 @@
                 android:src="@drawable/close_icon"
                 android:clickable="true"
                 android:focusable="true"
-                android:background="@drawable/selector_background"
+                android:background="@drawable/ripple_effect_background"
                 android:layout_marginEnd="@dimen/_15sdp"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
