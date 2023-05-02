@@ -6,7 +6,13 @@
     ▪ Edit Note
     ▪ Delete Note
     ▪ Search Note
-    
+&nbsp;
+## 🖼️ **Screenshots**
+| `air` | `contrast` | `dark` |
+| --- | --- | --- |
+| [![air skin](https://mmistakes.github.io/minimal-mistakes/assets/images/air-skin-archive.png)](https://mmistakes.github.io/minimal-mistakes/assets/images/air-skin-archive-large.png) | [![contrast skin](https://mmistakes.github.io/minimal-mistakes/assets/images/contrast-skin-archive.png)](https://mmistakes.github.io/minimal-mistakes/assets/images/contrast-skin-archive-large.png) | [![dark skin](https://mmistakes.github.io/minimal-mistakes/assets/images/dark-skin-archive.png)](https://mmistakes.github.io/minimal-mistakes/assets/images/dark-skin-archive-large.png) |
+
+&nbsp;
 ## 👨‍💻 **Credits**
 | Topic                                        | Credit                                           |
 | ------------------------------------------- | ----------------------------------------------------- |
