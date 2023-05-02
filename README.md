@@ -10,11 +10,11 @@
 ## 🖼️ **Screenshots**
 | ` Home ` | ` Add Note ` | ` Edit Note ` |
 | --- | --- | --- |
-| <img src="https://user-images.githubusercontent.com/68102562/235592801-5cf66c79-cc0f-4ac0-bab4-d1c3e96c1fa0.jpg" width="500"> | <img src="https://user-images.githubusercontent.com/68102562/235592823-edb440d4-4a53-4902-bb8f-8b536c1be63d.jpg" width="500"> | <img src="https://user-images.githubusercontent.com/68102562/235592819-2d89c31e-4838-4c7b-8716-db1dda184d8d.jpg" width="500"> |
+| <img src="https://user-images.githubusercontent.com/68102562/235592801-5cf66c79-cc0f-4ac0-bab4-d1c3e96c1fa0.jpg" width="400"> | <img src="https://user-images.githubusercontent.com/68102562/235592823-edb440d4-4a53-4902-bb8f-8b536c1be63d.jpg" width="400"> | <img src="https://user-images.githubusercontent.com/68102562/235592819-2d89c31e-4838-4c7b-8716-db1dda184d8d.jpg" width="400"> |
 
 | ` Swipe To Delete ` | ` Search ` |
 | --- | --- |
-| <img src="https://user-images.githubusercontent.com/68102562/235592812-5680a8bf-c802-41f0-8b63-e91771fae9a1.jpg" width="500"> | <img src="https://user-images.githubusercontent.com/68102562/235592817-743011ef-7307-448c-b404-838e90538dc1.jpg" width="500"> |
+| <img src="https://user-images.githubusercontent.com/68102562/235592812-5680a8bf-c802-41f0-8b63-e91771fae9a1.jpg" width="400"> | <img src="https://user-images.githubusercontent.com/68102562/235592817-743011ef-7307-448c-b404-838e90538dc1.jpg" width="400"> |
 
 &nbsp;
 ## 👨‍💻 **Credits**
