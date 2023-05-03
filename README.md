@@ -1,6 +1,7 @@
 <h3 align="center">Notes-App</h3>
 <p align="center">Notes app with kotlin (MVVM)</p>
 
+&nbsp;
 ## 📜 **Features**
     ▪ Add Note (Title + Description)
     ▪ Edit Note
