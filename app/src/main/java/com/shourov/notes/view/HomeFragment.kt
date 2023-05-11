@@ -61,7 +61,7 @@ class HomeFragment : Fragment(), NoteItemClickListener {
 
         binding.infoButton.setOnClickListener { info() }
 
-        binding.notesRecyclerview.apply { adapter = NoteListAdapter(noteList, this@HomeFragment) }
+        binding.notesRecyclerview.adapter = NoteListAdapter(noteList, this@HomeFragment)
 
         val swipeToDeleteCallback = object : SwipeToDeleteCallback(requireContext()) {
             override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {

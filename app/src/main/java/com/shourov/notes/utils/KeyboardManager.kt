@@ -6,7 +6,6 @@ import android.view.inputmethod.InputMethodManager
 import android.widget.EditText
 
 object KeyboardManager {
-
     fun showKeyboard(editText: EditText) {
         try {
             editText.requestFocus()
@@ -16,7 +15,6 @@ object KeyboardManager {
             e.printStackTrace()
         }
     }
-
 
     fun hideKeyBoard(context: Context, view: View) {
         try {

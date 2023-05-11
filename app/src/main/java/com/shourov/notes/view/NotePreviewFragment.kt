@@ -29,10 +29,8 @@ class NotePreviewFragment : Fragment() {
         title = arguments?.getString("TITLE").toString()
         description = arguments?.getString("DESCRIPTION").toString()
 
-
         binding.titleTextview.text = title
         binding.descriptionTextview.text = description
-
 
         binding.editButton.setOnClickListener {
             val bundle = bundleOf(

@@ -11,7 +11,6 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
 class SearchViewModel(private val repository: SearchRepository) : ViewModel() {
-
     private val _searchResultLiveData = MutableLiveData<List<NoteTable>>()
     val searchResultLiveData : LiveData<List<NoteTable>>
         get() = _searchResultLiveData
@@ -26,5 +25,4 @@ class SearchViewModel(private val repository: SearchRepository) : ViewModel() {
     }
 
     suspend fun deleteNote(note: NoteTable) = repository.deleteNote(note)
-
 }

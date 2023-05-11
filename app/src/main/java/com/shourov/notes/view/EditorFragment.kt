@@ -46,8 +46,7 @@ class EditorFragment : Fragment() {
 
         dao = AppDatabase.getDatabase(requireContext()).appDao()
         repository = EditorRepository(dao)
-        viewModel =
-            ViewModelProvider(this, EditorViewModelFactory(repository))[EditorViewModel::class.java]
+        viewModel = ViewModelProvider(this, EditorViewModelFactory(repository))[EditorViewModel::class.java]
 
         id = arguments?.getInt("ID")!!.toInt()
         title = arguments?.getString("TITLE").toString()
