@@ -16,9 +16,9 @@ import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.RecyclerView
 import com.shourov.notes.R
 import com.shourov.notes.adapter.NoteListAdapter
+import com.shourov.notes.application.BaseApplication.Companion.database
 import com.shourov.notes.callback.SwipeToDeleteCallback
 import com.shourov.notes.database.AppDao
-import com.shourov.notes.database.AppDatabase
 import com.shourov.notes.database.tables.NoteTable
 import com.shourov.notes.databinding.DialogInfoBinding
 import com.shourov.notes.databinding.FragmentHomeBinding
@@ -45,7 +45,7 @@ class HomeFragment : Fragment(), NoteItemClickListener {
         // Inflate the layout for this fragment
         binding = FragmentHomeBinding.inflate(inflater, container, false)
 
-        dao = AppDatabase.getDatabase(requireContext()).appDao()
+        dao = database.appDao()
         repository = HomeRepository(dao)
         viewModel = ViewModelProvider(this, HomeViewModelFactory(repository))[HomeViewModel::class.java]
 
@@ -61,7 +61,7 @@ class HomeFragment : Fragment(), NoteItemClickListener {
 
         binding.infoButton.setOnClickListener { info() }
 
-        binding.notesRecyclerview.adapter = NoteListAdapter(noteList, this@HomeFragment)
+        binding.notesRecyclerview.adapter = NoteListAdapter(noteList, this)
 
         val swipeToDeleteCallback = object : SwipeToDeleteCallback(requireContext()) {
             override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
@@ -84,13 +84,13 @@ class HomeFragment : Fragment(), NoteItemClickListener {
                 binding.notesRecyclerview.visibility = View.GONE
                 binding.noNotesAvailableLayout.visibility = View.VISIBLE
             } else {
-                binding.noNotesAvailableLayout.visibility = View.GONE
-                binding.notesRecyclerview.visibility = View.VISIBLE
-
                 noteList.clear()
                 noteList.addAll(ArrayList(it).asReversed())
 
                 binding.notesRecyclerview.adapter?.notifyDataSetChanged()
+
+                binding.noNotesAvailableLayout.visibility = View.GONE
+                binding.notesRecyclerview.visibility = View.VISIBLE
             }
         }
     }

@@ -12,8 +12,7 @@ import kotlinx.coroutines.withContext
 
 class SearchViewModel(private val repository: SearchRepository) : ViewModel() {
     private val _searchResultLiveData = MutableLiveData<List<NoteTable>>()
-    val searchResultLiveData : LiveData<List<NoteTable>>
-        get() = _searchResultLiveData
+    val searchResultLiveData : LiveData<List<NoteTable>> get() = _searchResultLiveData
 
     fun searchNote(title: String){
         viewModelScope.launch(Dispatchers.IO) {

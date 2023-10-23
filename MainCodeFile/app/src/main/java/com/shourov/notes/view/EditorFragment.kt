@@ -11,8 +11,8 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
+import com.shourov.notes.application.BaseApplication.Companion.database
 import com.shourov.notes.database.AppDao
-import com.shourov.notes.database.AppDatabase
 import com.shourov.notes.database.tables.NoteTable
 import com.shourov.notes.databinding.DialogEditorExitBinding
 import com.shourov.notes.databinding.DialogSaveBinding
@@ -44,7 +44,7 @@ class EditorFragment : Fragment() {
         // Inflate the layout for this fragment
         binding = FragmentEditorBinding.inflate(inflater, container, false)
 
-        dao = AppDatabase.getDatabase(requireContext()).appDao()
+        dao = database.appDao()
         repository = EditorRepository(dao)
         viewModel = ViewModelProvider(this, EditorViewModelFactory(repository))[EditorViewModel::class.java]
 

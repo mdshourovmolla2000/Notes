@@ -15,9 +15,9 @@ import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.RecyclerView
 import com.shourov.notes.R
 import com.shourov.notes.adapter.NoteListAdapter
+import com.shourov.notes.application.BaseApplication.Companion.database
 import com.shourov.notes.callback.SwipeToDeleteCallback
 import com.shourov.notes.database.AppDao
-import com.shourov.notes.database.AppDatabase
 import com.shourov.notes.database.tables.NoteTable
 import com.shourov.notes.databinding.FragmentSearchBinding
 import com.shourov.notes.interfaces.NoteItemClickListener
@@ -45,7 +45,7 @@ class SearchFragment : Fragment(), NoteItemClickListener {
         // Inflate the layout for this fragment
         binding = FragmentSearchBinding.inflate(inflater, container, false)
 
-        dao = AppDatabase.getDatabase(requireContext()).appDao()
+        dao = database.appDao()
         repository = SearchRepository(dao)
         viewModel = ViewModelProvider(this, SearchViewModelFactory(repository))[SearchViewModel::class.java]
 
@@ -53,7 +53,7 @@ class SearchFragment : Fragment(), NoteItemClickListener {
 
         binding.closeButton.setOnClickListener { binding.searchEdittext.text.clear() }
 
-        binding.notesRecyclerview.adapter = NoteListAdapter(noteList, this@SearchFragment)
+        binding.notesRecyclerview.adapter = NoteListAdapter(noteList, this)
 
         val swipeToDeleteCallback = object : SwipeToDeleteCallback(requireContext()) {
             override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
