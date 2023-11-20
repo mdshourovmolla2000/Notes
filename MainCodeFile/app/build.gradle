@@ -49,8 +49,8 @@ dependencies {
     implementation 'com.intuit.sdp:sdp-android:1.1.0'
 
     //navigation component
-    implementation("androidx.navigation:navigation-fragment-ktx:2.7.4")
-    implementation("androidx.navigation:navigation-ui-ktx:2.7.4")
+    implementation("androidx.navigation:navigation-fragment-ktx:2.7.5")
+    implementation("androidx.navigation:navigation-ui-ktx:2.7.5")
 
     //Toasty
     implementation 'com.github.GrenderG:Toasty:1.5.2'
