@@ -29,19 +29,21 @@ class NotePreviewFragment : Fragment() {
         title = arguments?.getString("TITLE").toString()
         description = arguments?.getString("DESCRIPTION").toString()
 
-        binding.titleTextview.text = title
-        binding.descriptionTextview.text = description
+        binding.apply {
+            titleTextview.text = title
+            descriptionTextview.text = description
 
-        binding.editButton.setOnClickListener {
-            val bundle = bundleOf(
-                "ID" to id,
-                "TITLE" to title,
-                "DESCRIPTION" to description
-            )
-            findNavController().navigate(R.id.action_notePreviewFragment_to_editorFragment, bundle)
+            editButton.setOnClickListener {
+                val bundle = bundleOf(
+                    "ID" to id,
+                    "TITLE" to title,
+                    "DESCRIPTION" to description
+                )
+                findNavController().navigate(R.id.action_notePreviewFragment_to_editorFragment, bundle)
+            }
+
+            backButton.setOnClickListener { findNavController().popBackStack() }
         }
-
-        binding.backButton.setOnClickListener { findNavController().popBackStack() }
 
         return binding.root
     }

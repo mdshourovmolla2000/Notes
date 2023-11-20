@@ -51,9 +51,22 @@ class SearchFragment : Fragment(), NoteItemClickListener {
 
         observerList()
 
-        binding.closeButton.setOnClickListener { binding.searchEdittext.text.clear() }
+        binding.apply {
+            closeButton.setOnClickListener { binding.searchEdittext.text.clear() }
 
-        binding.notesRecyclerview.adapter = NoteListAdapter(noteList, this)
+            notesRecyclerview.adapter = NoteListAdapter(noteList, this@SearchFragment)
+
+            searchEdittext.doOnTextChanged { text, _, _, _ ->
+                searchText = text.toString()
+                if (searchText.isNotEmpty()){
+                    viewModel.searchNote(searchText)
+                } else {
+                    noteList.clear()
+                    notesRecyclerview.adapter?.notifyDataSetChanged()
+                    notFoundLayout.visibility = View.GONE
+                }
+            }
+        }
 
         val swipeToDeleteCallback = object : SwipeToDeleteCallback(requireContext()) {
             override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
@@ -69,33 +82,25 @@ class SearchFragment : Fragment(), NoteItemClickListener {
 
         ItemTouchHelper(swipeToDeleteCallback).attachToRecyclerView(binding.notesRecyclerview)
 
-        binding.searchEdittext.doOnTextChanged { text, _, _, _ ->
-            searchText = text.toString()
-            if (searchText.isNotEmpty()){
-                viewModel.searchNote(searchText)
-            } else {
-                noteList.clear()
-                binding.notesRecyclerview.adapter?.notifyDataSetChanged()
-                binding.notFoundLayout.visibility = View.GONE
-            }
-        }
-
         return binding.root
     }
 
     private fun observerList() {
         viewModel.searchResultLiveData.observe(viewLifecycleOwner) {
             if (it.isEmpty()) {
-                binding.notesRecyclerview.visibility = View.GONE
-                binding.notFoundLayout.visibility = View.VISIBLE
+                binding.apply {
+                    notesRecyclerview.visibility = View.GONE
+                    notFoundLayout.visibility = View.VISIBLE
+                }
             } else {
-                binding.notFoundLayout.visibility = View.GONE
-                binding.notesRecyclerview.visibility = View.VISIBLE
-
                 noteList.clear()
                 noteList.addAll(ArrayList(it).asReversed())
 
-                binding.notesRecyclerview.adapter?.notifyDataSetChanged()
+                binding.apply {
+                    notFoundLayout.visibility = View.GONE
+                    notesRecyclerview.visibility = View.VISIBLE
+                    notesRecyclerview.adapter?.notifyDataSetChanged()
+                }
             }
         }
     }

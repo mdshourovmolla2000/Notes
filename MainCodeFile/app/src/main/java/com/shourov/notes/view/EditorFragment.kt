@@ -146,12 +146,14 @@ class EditorFragment : Fragment() {
             //make transparent to default dialog
             alertDialog.window?.setBackgroundDrawable(ColorDrawable(0))
 
-            dialogBinding.discardButton.setOnClickListener {
-                findNavController().popBackStack()
-                alertDialog.dismiss()
-            }
+            dialogBinding.apply {
+                discardButton.setOnClickListener {
+                    findNavController().popBackStack()
+                    alertDialog.dismiss()
+                }
 
-            dialogBinding.keepButton.setOnClickListener { alertDialog.dismiss() }
+                keepButton.setOnClickListener { alertDialog.dismiss() }
+            }
 
             alertDialog.show()
         } else {

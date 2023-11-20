@@ -49,19 +49,22 @@ class HomeFragment : Fragment(), NoteItemClickListener {
         repository = HomeRepository(dao)
         viewModel = ViewModelProvider(this, HomeViewModelFactory(repository))[HomeViewModel::class.java]
 
-        binding.searchButton.setOnClickListener { findNavController().navigate(R.id.action_homeFragment_to_searchFragment) }
-        binding.addNoteIcon.setOnClickListener {
-            val bundle = bundleOf(
-                "ID" to "",
-                "TITLE" to "",
-                "DESCRIPTION" to ""
-            )
-            findNavController().navigate(R.id.action_homeFragment_to_editorFragment, bundle)
+        binding.apply {
+            searchButton.setOnClickListener { findNavController().navigate(R.id.action_homeFragment_to_searchFragment) }
+
+            addNoteIcon.setOnClickListener {
+                val bundle = bundleOf(
+                    "ID" to "",
+                    "TITLE" to "",
+                    "DESCRIPTION" to ""
+                )
+                findNavController().navigate(R.id.action_homeFragment_to_editorFragment, bundle)
+            }
+
+            infoButton.setOnClickListener { info() }
+
+            notesRecyclerview.adapter = NoteListAdapter(noteList, this@HomeFragment)
         }
-
-        binding.infoButton.setOnClickListener { info() }
-
-        binding.notesRecyclerview.adapter = NoteListAdapter(noteList, this)
 
         val swipeToDeleteCallback = object : SwipeToDeleteCallback(requireContext()) {
             override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
@@ -81,16 +84,19 @@ class HomeFragment : Fragment(), NoteItemClickListener {
     private fun observerList() {
         viewModel.getNotes().observe(viewLifecycleOwner) {
             if (it.isEmpty()) {
-                binding.notesRecyclerview.visibility = View.GONE
-                binding.noNotesAvailableLayout.visibility = View.VISIBLE
+                binding.apply {
+                    notesRecyclerview.visibility = View.GONE
+                    noNotesAvailableLayout.visibility = View.VISIBLE
+                }
             } else {
                 noteList.clear()
                 noteList.addAll(ArrayList(it).asReversed())
 
-                binding.notesRecyclerview.adapter?.notifyDataSetChanged()
-
-                binding.noNotesAvailableLayout.visibility = View.GONE
-                binding.notesRecyclerview.visibility = View.VISIBLE
+                binding.apply {
+                    notesRecyclerview.adapter?.notifyDataSetChanged()
+                    noNotesAvailableLayout.visibility = View.GONE
+                    notesRecyclerview.visibility = View.VISIBLE
+                }
             }
         }
     }
